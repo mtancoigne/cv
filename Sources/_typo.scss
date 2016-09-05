@@ -1,0 +1,27 @@
+h1, h2, h3, h4 {font-weight: bold;}
+h1 {font-size: 1.8em;}
+h2 {
+	font-size: 1.5em;
+	background-image:$h2-bg;
+	background-repeat:repeat-x;
+	background-position: 0% 100%;
+	padding: 0 5px 9px 5px;
+}
+h3 {
+	font-size: 1.2em;
+	margin-top: 5px;
+	padding: 0 5px 8px 5px;
+	margin-bottom:3px;
+	background-image:$h3-bg;
+	background-repeat:repeat-x;
+	background-position: 0% 100%;
+}
+h4 {font-size: 1.1em;}
+
+body{
+	font-family: 'Dosis', sans-serif;
+}
+
+code, pre{
+	font-family: 'Source Code Pro', monospace;
+}

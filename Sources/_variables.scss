@@ -1,0 +1,29 @@
+//
+// Variables
+// ---------
+// Colors
+$body-bg: beige;//#F8F8F8;
+$border-color:#333;
+$content-bg:#DFDFDF;
+$padding-h: 10px;
+$text-color:#333;
+$avatar-size: 100px;
+$card-bg: lighten($body-bg, 10%);
+
+$link-color: lighten($text-color, 30%);
+$link-hover-color: #833;
+$link-visited-color: lighten($link-color, 20%);
+
+$grid-lg: 960px;
+$grid-md: 700px;
+$grid-sm: 400px;
+
+$page-bg-top:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAyCAQAAADcxcICAAAAJklEQVQImWNgCGNgYGBgYAhjwMpygbBcsLMMICwDyliSEJYkfVkAQN8IlUJPukEAAAAASUVORK5CYII=');
+$page-bg-bottom:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAyCAQAAADcxcICAAAAJklEQVQImWNgkGRgYGBgYJBkoDPLAMIyoIzlAmG5YGeFQVhh2FgAGYEIlVQNFV8AAAAASUVORK5CYII=');
+$h2-bg:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAICAQAAAB5JObJAAAAI0lEQVQImWNkKGNgYGBgYEhnYEiHsMIYGFwgLBcGBkkISxIAOTQCVvWGJ6UAAAAASUVORK5CYII=');
+$h3-bg:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAFCAQAAADbc8WkAAAANUlEQVQImWNgCGcIZ2BgYECnGRkMGEQYhBkYGG6i0swMLxi+M/xgeMtwAY1mkGTAjnEISwIAg+IQrr9hZwUAAAAASUVORK5CYII=');
+$btn-border-img:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAQAAACR313BAAAAUElEQVQYld3QMQqAMBSD4U/dOxVK9x6g9z+RF3B3UNTWgruBf8p7CQTI3sowgzSwEyyyIgpWtSEKpuOynmFPat/Uc+mH3/dqm9LQrTbiq3sHBMsRlqtwUecAAAAASUVORK5CYII=');
+$btn-border-img-hover:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAQAAACR313BAAAAVElEQVQYld3Nuw2AMBCD4Q8QWyClvDYbMEYmp6BkE4qgiJdEj6W/8Z1tIHsqQw/i5RwwyGbJZFEuJJOxfpaj7Ey5L91p+mG6k4Vks4oL1WvpN762dxbbG1+/J/RgAAAAAElFTkSuQmCC');
+$bg-filler-img:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAAEklEQVQImWNgYGCQZGCQZGAAAADrADOU2hSDAAAAAElFTkSuQmCC');
+$bg-filler-img-hover:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAAEklEQVQImWNgYGAwYGAwYGAAAAG6AGFsvEw1AAAAAElFTkSuQmCC');
+$bg-big: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAQAAADa613fAAABEUlEQVR4nO3Y0WkCURgF4UkJCQGxC4uwBluw9CCE2EJeQoJPGli4488I5+0ujHzorsIeRuzukf3yxAcnSEjkXyKH9YmJzBQ5LE9M5HbH5YkbiRzXJyZys9P6xG1ETssTNxI5r0/cRuS8PPGhvfy8mx1wYQfAO/AGvPL3ugLwBXwCcPm9Bj7YCzZF5P6RMZ+RMd9aY+4jY+7sY561xvweScQm8ixLxLZEbLt7ZMw/jc8yQUIiiagnSEgkEfUECYkkop4gIZFE1BMkJJKIeoKERBJRT5CQSCLqCRISSUQ9QUIiiagnSEgkEfUECYkkop4gIZFE1BMkJJKIeoKERBJRT5CQSCLqCRISSUQ9QUIiI0W+Ae/5EPwa9KnWAAAAAElFTkSuQmCC');

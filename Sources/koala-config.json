@@ -1,0 +1,29 @@
+{
+	"mappings": [
+		{
+			"src": "",
+			"dest": "../webroot/css"
+		}
+	],
+	"ignores": [
+        "*.css", 
+        "*.less",
+				"fa",
+        "common/bootstrap-sass", 
+        "common/bootstrap-tagsinput-latest", 
+        "common/Font-Awesome-master", 
+        "common/codemirror",
+        "common/bootflat.github.io-master"
+        ],
+	"options": {
+		"outputStyle": "compressed",
+		"lineComments": false,
+		"debugInfo": false,
+		"sourceMap": false,
+		"unixNewlines": false,
+		"autoprefix": false
+	},
+	"customOptions": [],
+	"includePaths": [],
+	"requireLibs": []
+}
