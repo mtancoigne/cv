@@ -8,7 +8,7 @@
 	"ignores": [
         "*.css", 
         "*.less",
-				"fa",
+        "fa",
         "common/bootstrap-sass", 
         "common/bootstrap-tagsinput-latest", 
         "common/Font-Awesome-master", 

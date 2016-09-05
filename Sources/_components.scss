@@ -1,179 +1,191 @@
 #personnal-data {
-	display: flex;
+    display: flex;
 
-	.info-wrapper {
-		width: 100%;
+    .info-wrapper {
+        width: 100%;
 
-		.name-wrapper {
-			text-align: center;
+        .name-wrapper {
+            text-align: center;
 
-			.subtitle {
-				margin-top: 25px;
-			}
+            .subtitle {
+                margin-top: 25px;
+            }
 
-			.name-lines {
-				z-index: -1;
-				position: relative;
-				top: 1em;
-				content: '';
-				display: block;
-				width: 100%;
-				border-top: 3px double lighten($text-color, 5%);
-			}
+            .name-lines {
+                z-index: -1;
+                position: relative;
+                top: 1em;
+                content: '';
+                display: block;
+                width: 100%;
+                border-top: 3px double lighten($text-color, 5%);
+            }
 
-			h1 {
-				display: inline-block;
-				background-color: $card-bg;
-				padding: 0px 5px;
-			}
-		}
-	}
+            h1 {
+                display: inline-block;
+                background-color: $card-bg;
+                padding: 0px 5px;
+            }
+        }
+    }
 }
 
 .avatar {
-	width: $avatar-size;
-	height: $avatar-size;
-	border-radius: 50%;
-	border: 1px solid $border-color;
-	padding: 3px;
-	background-color: #FFF;
-	margin-right: 5px;
+    width: $avatar-size;
+    height: $avatar-size;
+    border-radius: 50%;
+    border: 1px solid $border-color;
+    padding: 3px;
+    background-color: #FFF;
+    margin-right: 5px;
 }
 
 #header {
-	background-color: #DFDFDF;
+    background-color: #DFDFDF;
 }
 
 .card {
-	background-color: $card-bg;
+    background-color: $card-bg;
 }
 
 a {
-	color: $link-color;
-	text-decoration: none;
+    color: $link-color;
+    text-decoration: none;
 
-	&:visited {
-		color: $link-visited-color;
-	}
-	
-	&:hover {
-		color: $link-hover-color;
-	}
+    &:visited {
+        color: $link-visited-color;
+    }
+
+    &:hover {
+        color: $link-hover-color;
+    }
 }
 
 .clearfix {
-	clear: both;
+    clear: both;
 }
 
 #personnal-card {
-	position: relative;
-	z-index: 2;
+    position: relative;
+    z-index: 2;
 
-	// Small tilt
-	-ms-transform: rotate(-1deg);
+    // Small tilt
+    -ms-transform: rotate(-1deg);
 
-	/* IE 9 */
-	-webkit-transform: rotate(-1deg);
-	background-color: $card-bg;
+    /* IE 9 */
+    -webkit-transform: rotate(-1deg);
+    background-color: $card-bg;
 
-	/* Chrome, Safari, Opera */
-	transform: rotate(-1deg);
-	padding: $padding-h;
-	box-shadow: 1px 1px 2px 0px #BBB,  -1px -1px 2px 0px #BBB;
+    /* Chrome, Safari, Opera */
+    transform: rotate(-1deg);
+    padding: $padding-h;
+    box-shadow: 1px 1px 2px 0px #BBB,  -1px -1px 2px 0px #BBB;
 }
 
 #header {
-	position: absolute;
-	top: 25px;
-	z-index: 0;
-	background-color: saturate($body-bg, 10%);
+    position: absolute;
+    top: 25px;
+    z-index: 0;
+    background-color: saturate($body-bg, 10%);
 }
 
 .info-list {
-	text-align: right;
-	margin: $padding-h (-$padding-h) (-$padding-h) (-$padding-h);
-	background-color: darken($card-bg, 15%);
-	border-top: 1px solid darken($card-bg, 30%);
+    text-align: right;
+    margin: $padding-h (-$padding-h) (-$padding-h) (-$padding-h);
+    background-color: darken($card-bg, 15%);
+    border-top: 1px solid darken($card-bg, 30%);
 
-	li {
-		display: inline;
-		margin-right: 5px;
-	}
+    li {
+        display: inline;
+        margin-right: 5px;
+    }
 }
 
 @media(max-width:$grid-md){
-	#header {
-		position: initial ;
-		/*top: 25px;*/
-		z-index: 0;
-	}
+    #header {
+        position: initial ;
+        /*top: 25px;*/
+        z-index: 0;
+    }
 }
 
 ul.starlist {
-	li .content:hover {
-		background-color: #DDD;
-	}
-	li{
-		/*font-size: 0.9em;*/
-		// margin: 5px 0;
-		margin-bottom:5px;
-		padding:3px 0px;
-	}
+    li .content:hover {
+        background-color: #DDD;
+    }
+    li{
+        /*font-size: 0.9em;*/
+        // margin: 5px 0;
+        margin-bottom:5px;
+        padding:3px 0px;
+    }
 }
 
 .card-content-list{
-	padding:10px;
-	padding-top:0px;
+    padding:10px;
+    padding-top:0px;
 }
 
 li .stars {
-	float: right;
-	font-size: 0.8em;
-	.btn-samples {
-		border-image: $btn-border-img 3 repeat repeat;
-		border-style:solid;
-		border-width: 3px;
-		padding: 0px 3px;
-		background-image:$bg-filler-img;
-		opacity:0.2;
-		cursor: not-allowed;
-		&:hover{
-			border-image: $btn-border-img-hover 3 repeat repeat;
-			background-image:$bg-filler-img-hover;
-		}
-	}
-	.enabled{
-		opacity:1;
-		cursor: context-menu;
-	}
+    float: right;
+    font-size: 0.8em;
+    .btn-samples {
+        border-image: $btn-border-img 3 repeat repeat;
+        border-style:solid;
+        border-width: 3px;
+        padding: 0px 3px;
+        background-image:$bg-filler-img;
+        opacity:0.2;
+        cursor: not-allowed;
+        &:hover{
+            border-image: $btn-border-img-hover 3 repeat repeat;
+            background-image:$bg-filler-img-hover;
+        }
+    }
+    .enabled{
+        opacity:1;
+        cursor: context-menu;
+    }
 }
 .list-project{
-	display:none;
-	margin-left:5px;
+    display:none;
+    margin-left:5px;
 }
 
 .col-info{
-	background-color: lighten(#DFDFDF, 3%);
-	/*box-shadow:1px 1px 2px 1px #BBB,-1px -1px 2px 1px #BBB;*/
-	margin-bottom:15px;
-	background-color: saturate($body-bg, 10%);
-	border:1px solid rgba(100,100,100, 0.5);
+    background-color: lighten(#DFDFDF, 3%);
+    /*box-shadow:1px 1px 2px 1px #BBB,-1px -1px 2px 1px #BBB;*/
+    margin-bottom:15px;
+    background-color: saturate($body-bg, 10%);
+    border:1px solid rgba(100,100,100, 0.5);
 }
 
 /*.col-competences{
-	background-color: #ffff99;
+        background-color: #ffff99;
 }
 .col-experience{
-	background-color: #bbddee;
+        background-color: #bbddee;
 }
 .col-formation{
-	background-color: #aacc33;
+        background-color: #aacc33;
 }
 .col-divers{
-	background-color:#ffbb55;
+        background-color:#ffbb55;
 }*/
+
+.print-only{
+    display: none;
+}
 @media print{
-	.btn-samples{
-		display: none;
-	}
+    .btn-samples{
+        display: none;
+    }
+    a:after{content:" (" attr(href) ") ";font-size:0.8em;font-weight:normal;}
+    .no-print{
+        display: none;
+    }
+    .print-only{
+        display: initial;
+    }
+    /*.one, .two, .three, .col{width:98%;}*/
 }
