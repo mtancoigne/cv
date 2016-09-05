@@ -9,6 +9,7 @@
 
             .subtitle {
                 margin-top: 25px;
+								font-size:1.5em;
             }
 
             .name-lines {
@@ -117,13 +118,16 @@ ul.starlist {
         /*font-size: 0.9em;*/
         // margin: 5px 0;
         margin-bottom:5px;
-        padding:3px 0px;
+        padding:0px 0px;
     }
 }
 
 .card-content-list{
     padding:10px;
     padding-top:0px;
+		li{
+			margin-bottom:3px;
+		}
 }
 
 li .stars {
@@ -147,6 +151,7 @@ li .stars {
         cursor: context-menu;
     }
 }
+
 .list-project{
     display:none;
     margin-left:5px;
@@ -157,7 +162,7 @@ li .stars {
     /*box-shadow:1px 1px 2px 1px #BBB,-1px -1px 2px 1px #BBB;*/
     margin-bottom:15px;
     background-color: saturate($body-bg, 10%);
-    border:1px solid rgba(100,100,100, 0.5);
+    border:1px solid $border-color;//1px solid rgba(100,100,100, 0.5);
 }
 
 /*.col-competences{
@@ -177,15 +182,82 @@ li .stars {
     display: none;
 }
 @media print{
+		body{
+			margin:0px !important; 
+			padding:0; 
+			font-size:9pt;
+			/*border:1px solid #333;*/
+		}
     .btn-samples{
         display: none;
     }
-    a:after{content:" (" attr(href) ") ";font-size:0.8em;font-weight:normal;}
+		
+		h2{
+			border:transparent;
+			border-bottom: 3px double $border-color;
+			padding-bottom: 3px;
+			background-image:none;
+		}
+		
+		h3{ font-size:1em;}
+		
+		a, a:visited{color:$text-color}
+    a:after{
+			content:" (" attr(href) ") ";
+			font-size:0.9em;
+			font-weight:normal;
+			color:brown
+		}
     .no-print{
         display: none;
     }
     .print-only{
-        display: initial;
+        display: inherit;
     }
+		.col{
+			margin-bottom:0;
+		}
+		.third-print{width:31.3%}
+		.two-print{width:48%}
+		#header {
+        position: absolute ;
+        top: 0px;
+        z-index: 0;
+				//border:1px solid rgba(100,100,100,0.5);
+    }
+		#personnal-card{
+			border: 1px solid rgb(100,100,100);
+			box-shadow: 5px 5px 0 0 rgba(150,150,150,0.5);
+			.info-list{
+				border-top: 1px dashed $border-color;
+			}
+		}
+		
+		.card-content-list{
+			padding-bottom:3px;
+		}
+		.col-competences{
+			width:23%;
+			.col{
+				width:100%;
+					margin:0;
+			}
+		}
+		.col-experiences, .col-experiences-perso{
+			width: 35.5%
+		}
+		.main-content{
+			margin-top:15px;
+		}
+		
+/*		.col-perso a:after{
+			content:" " attr(href);
+			font-size:0.8em;
+			font-weight:normal;
+			color:brown
+		}*/
+		a > i.fa{
+			display:none;
+		}
     /*.one, .two, .three, .col{width:98%;}*/
 }
