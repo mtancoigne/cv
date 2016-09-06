@@ -138,7 +138,7 @@ $projs = [
     'TancEben' => ['title' => 'Tancoigne Ebeniste', 'description' => 'Site de l\'entreprise de mon père', 'link' => 'http://tancoigne-ebeniste.com', 'tech' => 'PHP, Mysql'],
 ];
 
-// This section is defined here, as used twice on the page... 
+// This section is defined here, as used twice on the page...
 // not a good practice but that's it.
 $this->start('divers');
 ?>
@@ -184,7 +184,7 @@ $this->end();
             </ul>
         </div>
         <!-- /Card -->
-        
+
         <!-- Links -->
         <div class="line" id="header">
             <div class="col two two two-print">
@@ -373,7 +373,7 @@ $this->end();
 <div class="clearfix"></div>
 
 <!-- Additionnal scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" ></script>
+<?php echo $this->Html->script('lib/jquery.min.js')?>
 <script language="javascript">
     var ml = 'bS50YW5jb2lnbmVAZ21haWwuY29t'; //mail
     var tlc = 'KzMzNjExMDExMTY4'; //tel. complete
