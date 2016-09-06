@@ -9,7 +9,7 @@
 
             .subtitle {
                 margin-top: 25px;
-								font-size:1.5em;
+                font-size:1.5em;
             }
 
             .name-lines {
@@ -125,9 +125,9 @@ ul.starlist {
 .card-content-list{
     padding:10px;
     padding-top:0px;
-		li{
-			margin-bottom:3px;
-		}
+    li{
+        margin-bottom:3px;
+    }
 }
 
 li .stars {
@@ -154,6 +154,7 @@ li .stars {
 
 .list-project{
     display:none;
+    font-size:0.9em;
     margin-left:5px;
 }
 
@@ -165,99 +166,86 @@ li .stars {
     border:1px solid $border-color;//1px solid rgba(100,100,100, 0.5);
 }
 
-/*.col-competences{
-        background-color: #ffff99;
-}
-.col-experience{
-        background-color: #bbddee;
-}
-.col-formation{
-        background-color: #aacc33;
-}
-.col-divers{
-        background-color:#ffbb55;
-}*/
-
 .print-only{
     display: none;
 }
 @media print{
-		body{
-			margin:0px !important; 
-			padding:0; 
-			font-size:9pt;
-			/*border:1px solid #333;*/
-		}
+    body{
+        margin:0px !important; 
+        padding:0; 
+        font-size:9pt;
+        /*border:1px solid #333;*/
+    }
     .btn-samples{
         display: none;
     }
-		
-		h2{
-			border:transparent;
-			border-bottom: 3px double $border-color;
-			padding-bottom: 3px;
-			background-image:none;
-		}
-		
-		h3{ font-size:1em;}
-		
-		a, a:visited{color:$text-color}
+
+    h2{
+        border:transparent;
+        border-bottom: 3px double $border-color;
+        padding-bottom: 3px;
+        background-image:none;
+    }
+
+    h3{ font-size:1em;}
+
+    a, a:visited{color:$text-color}
     a:after{
-			content:" (" attr(href) ") ";
-			font-size:0.9em;
-			font-weight:normal;
-			color:brown
-		}
+        content:" (" attr(href) ") ";
+        font-size:0.9em;
+        font-weight:normal;
+        color:brown
+    }
     .no-print{
         display: none;
     }
     .print-only{
         display: inherit;
     }
-		.col{
-			margin-bottom:0;
-		}
-		.third-print{width:31.3%}
-		.two-print{width:48%}
-		#header {
+    .col{
+        margin-bottom:0;
+    }
+    .third-print{width:31.3%}
+    .two-print{width:48%}
+    #header {
         position: absolute ;
         top: 0px;
         z-index: 0;
-				//border:1px solid rgba(100,100,100,0.5);
+        //border:1px solid rgba(100,100,100,0.5);
     }
-		#personnal-card{
-			border: 1px solid rgb(100,100,100);
-			box-shadow: 5px 5px 0 0 rgba(150,150,150,0.5);
-			.info-list{
-				border-top: 1px dashed $border-color;
-			}
-		}
-		
-		.card-content-list{
-			padding-bottom:3px;
-		}
-		.col-competences{
-			width:23%;
-			.col{
-				width:100%;
-					margin:0;
-			}
-		}
-		.col-experiences, .col-experiences-perso{
-			width: 35.5%
-		}
-		.main-content{
-			margin-top:15px;
-		}
-		
-/*		.col-perso a:after{
-			content:" " attr(href);
-			font-size:0.8em;
-			font-weight:normal;
-			color:brown
-		}*/
-		a > i.fa{
-			display:none;
-		}
+    #personnal-card{
+        border: 1px solid rgb(100,100,100);
+        box-shadow: 5px 5px 0 0 rgba(150,150,150,0.5);
+        .info-list{
+            border-top: 1px dashed $border-color;
+        }
+    }
+
+    .card-content-list{
+        padding-bottom:3px;
+    }
+    .col-competences{
+        width:23%;
+        .col{
+            width:100%;
+            margin:0;
+        }
+    }
+    .col-experiences, .col-experiences-perso{
+        width: 35.5%
+    }
+    .main-content{
+        margin-top:15px;
+    }
+
+    /*		.col-perso a:after{
+                            content:" " attr(href);
+                            font-size:0.8em;
+                            font-weight:normal;
+                            color:brown
+                    }*/
+    a > i.fa{
+        display:none;
+    }
     /*.one, .two, .three, .col{width:98%;}*/
 }
