@@ -233,7 +233,7 @@ $this->end();
                                 // Case where there is no special data for the competence
                                 if (!is_array($comData)):
                                     ?>
-                                    <li><?php echo $comData ?></li>
+                                    <li class="no-style"><?php echo $comData ?></li>
                                     <?php
                                 // Case where there is data
                                 else:
