@@ -1,17 +1,16 @@
+// Ids
+// ===
+/* Contains all the headers data */
 #personnal-data {
     display: flex;
-
     .info-wrapper {
         width: 100%;
-
         .name-wrapper {
             text-align: center;
-
             .subtitle {
                 margin-top: 25px;
                 font-size:1.5em;
             }
-
             .name-lines {
                 z-index: -1;
                 position: relative;
@@ -21,7 +20,6 @@
                 width: 100%;
                 border-top: 3px double lighten($text-color, 5%);
             }
-
             h1 {
                 display: inline-block;
                 background-color: $card-bg;
@@ -31,6 +29,32 @@
     }
 }
 
+/* Links */
+#header {
+    position: absolute;
+    top: 25px;
+    z-index: 0;
+    background-color: saturate($body-bg, 10%);
+}
+
+/* Card with name and job */
+#personnal-card {
+    position: relative;
+    z-index: 2;
+    background-color: $card-bg;
+    padding: $padding-h;
+    box-shadow: 1px 1px 2px 0px #BBB,  -1px -1px 2px 0px #BBB;
+    // Small tilt
+    -ms-transform: rotate(-1deg);
+    /* IE 9 */
+    -webkit-transform: rotate(-1deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(-1deg);
+}
+
+// Classes
+// =======
+/* Avatar image */
 .avatar {
     width: $avatar-size;
     height: $avatar-size;
@@ -41,53 +65,12 @@
     margin-right: 5px;
 }
 
-#header {
-    background-color: #DFDFDF;
-}
-
 .card {
     background-color: $card-bg;
 }
 
-a {
-    color: $link-color;
-    text-decoration: none;
-
-    &:visited {
-        color: $link-visited-color;
-    }
-
-    &:hover {
-        color: $link-hover-color;
-    }
-}
-
 .clearfix {
     clear: both;
-}
-
-#personnal-card {
-    position: relative;
-    z-index: 2;
-
-    // Small tilt
-    -ms-transform: rotate(-1deg);
-
-    /* IE 9 */
-    -webkit-transform: rotate(-1deg);
-    background-color: $card-bg;
-
-    /* Chrome, Safari, Opera */
-    transform: rotate(-1deg);
-    padding: $padding-h;
-    box-shadow: 1px 1px 2px 0px #BBB,  -1px -1px 2px 0px #BBB;
-}
-
-#header {
-    position: absolute;
-    top: 25px;
-    z-index: 0;
-    background-color: saturate($body-bg, 10%);
 }
 
 .info-list {
@@ -95,28 +78,27 @@ a {
     margin: $padding-h (-$padding-h) (-$padding-h) (-$padding-h);
     background-color: darken($card-bg, 15%);
     border-top: 1px solid darken($card-bg, 30%);
-
     li {
         display: inline;
         margin-right: 5px;
     }
 }
 
-@media(max-width:$grid-md){
-    #header {
-        position: initial ;
-        /*top: 25px;*/
-        z-index: 0;
+// Scaffolding
+// ===========
+a {
+    color: $link-color;
+    text-decoration: none;
+    &:visited {
+        color: $link-visited-color;
+    }
+    &:hover {
+        color: $link-hover-color;
     }
 }
 
 ul.starlist {
-    li .content:hover {
-        background-color: #DDD;
-    }
     li{
-        /*font-size: 0.9em;*/
-        // margin: 5px 0;
         margin-bottom:5px;
         padding:0px 0px;
     }
@@ -127,12 +109,21 @@ ul.starlist {
     padding-top:0px;
     li{
         margin-bottom:3px;
+        &:before{
+            content: ' - ';
+        }
     }
 }
 
+li.no-style:before{
+    content: '';
+}
+
+/* Lists with stars */
 li .stars {
     float: right;
     font-size: 0.8em;
+    /* "Projects..." button */
     .btn-samples {
         border-image: $btn-border-img 3 repeat repeat;
         border-style:solid;
@@ -146,38 +137,55 @@ li .stars {
             background-image:$bg-filler-img-hover;
         }
     }
+    /* Enabled buttons */
     .enabled{
         opacity:1;
         cursor: context-menu;
     }
-}
 
+}
+/* Projects list in competences blocks */
 .list-project{
     display:none;
     font-size:0.9em;
     margin-left:5px;
 }
 
+/* Card with info in it */
 .col-info{
     background-color: lighten(#DFDFDF, 3%);
-    /*box-shadow:1px 1px 2px 1px #BBB,-1px -1px 2px 1px #BBB;*/
     margin-bottom:15px;
     background-color: saturate($body-bg, 10%);
-    border:1px solid $border-color;//1px solid rgba(100,100,100, 0.5);
+    border:1px solid $border-color;
 }
 
+// Helpers
+// =======
+/* Helper for items visible only on printed pages */
 .print-only{
     display: none;
 }
+
+// Media queries
+// =============
+/* Small devices */
+@media(max-width:$grid-md){
+    // Moving header up
+    #header {
+        position: initial ;
+        z-index: 0;
+    }
+}
+
+/* Print style */
 @media print{
+
+    // Scaffolding
+    // ===========
     body{
         margin:0px !important; 
         padding:0; 
         font-size:9pt;
-        /*border:1px solid #333;*/
-    }
-    .btn-samples{
-        display: none;
     }
 
     h2{
@@ -196,17 +204,12 @@ li .stars {
         font-weight:normal;
         color:brown
     }
-    .no-print{
-        display: none;
+    /* Removing icon in links if any */
+    a > i.fa{
+        display:none;
     }
-    .print-only{
-        display: inherit;
-    }
-    .col{
-        margin-bottom:0;
-    }
-    .third-print{width:31.3%}
-    .two-print{width:48%}
+    // Ids
+    // ===
     #header {
         position: absolute ;
         top: 0px;
@@ -221,9 +224,20 @@ li .stars {
         }
     }
 
+
+    // Classes
+    // =======    
+    .btn-samples{
+        display: none;
+    }
+    .main-content{
+        margin-top:15px;
+    }
     .card-content-list{
         padding-bottom:3px;
     }
+
+    /* Force resize of named cols */
     .col-competences{
         width:23%;
         .col{
@@ -231,21 +245,26 @@ li .stars {
             margin:0;
         }
     }
+    
     .col-experiences, .col-experiences-perso{
         width: 35.5%
     }
-    .main-content{
-        margin-top:15px;
-    }
-
-    /*		.col-perso a:after{
-                            content:" " attr(href);
-                            font-size:0.8em;
-                            font-weight:normal;
-                            color:brown
-                    }*/
-    a > i.fa{
+    
+    .list-projects{
         display:none;
     }
-    /*.one, .two, .three, .col{width:98%;}*/
+
+    // Print-specific classes
+    // ======================
+    .no-print{
+        display: none;
+    }
+    .print-only{
+        display: inherit;
+    }
+    .col{
+        margin-bottom:0;
+    }
+    .third-print{width:31.3%}
+    .two-print{width:48%}
 }

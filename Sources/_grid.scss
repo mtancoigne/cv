@@ -1,110 +1,105 @@
-/** 
-First, we normalize the entire page behaviour for box sizing. This should go at the beginning of the CSS file
-See https://css-tricks.com/box-sizing/ for more info about it
-*/
+// Normalization (See https://css-tricks.com/box-sizing/ for more info about it)
+// =============
 html{
-  box-sizing:border-box
+    box-sizing:border-box
 }
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
 }
 
+// Containers
+// ==========
 /* Containers will hold lines of cols. Fluid containers are 100% large*/
-.container, .container-fluid {
-  display:block;
-  position: relative;
-  width:100%;
-  padding: 0px;
-  margin: 0 auto;
+.container, 
+.container-fluid {
+    display:block;
+    position: relative;
+    width: 100%;
+    padding: 0px;
+    margin: 0 auto;
 }
 
 /* Containers have a fixed width */
 .container{
-  max-width: 960px;
+    max-width: $container-width;
 }
 
 /* Here we clean the container to prevent floating issues with other content*/
 .container:before,
 .container:after{
-  content:'';
-  clear:both;
-  display: block;
+    content:'';
+    clear:both;
+    display: block;
 }
 
-/* A line should be 100% wide */
+// Lines
+// =====
 .line{
-  display:block;
-  min-width:100%;
-  clear:both;
+    display:block;
+    min-width:100%;
+    clear:both;
 }
 
-/* Behavior of a col */
+// Cols
+// ====
 .col {
-  float: left;
-  margin:10px 1%;
-  /* here the width is 4% smaller as we use 2% margins */
-  width: 98%; 
+    float: left;
+    margin:10px 1%;
+    width: 98%; 
 }
 
-/* For devices larger than 600px */
+// Media queries
+// =============
+
+/* Large devices */
 @media (min-width: $grid-md) {
-  /* Don't forget the margin */
-  .one{width:23%;}
-  .two{width:48%;}
-  .three{width:73%;}
-  .four{width:98%;}
-	.no-margin{
-		.one{width:25%;}
-		.two{width:50%;}
-		.three{width:75%;}
-		.four{width:100%;}
-	}
-	// .one.no-margin{width:25%;}
-	// .two.no-margin{width:50%;}
-	// .three.no-margin{width:75%;}
-	// .four.no-margin{width:100%;}
+    .one{width:23%;}
+    .two{width:48%;}
+    .three{width:73%;}
+    .four{width:98%;}
+    .no-margin{
+        .one{width:25%;}
+        .two{width:50%;}
+        .three{width:75%;}
+        .four{width:100%;}
+    }
 }
-/* For devices between 400 and 600px */
+/* Medium devices */
 @media(max-width:$grid-md){
-  /* Don't forget the margin */
-  .one-md{width:23%;}
-  .two-md{width:48%;}
-  .three-md{width:73%;}
-  .four-md{width:98%;}
-	.no-margin{
-		.one-md{width:25%;}
-		.two-md{width:50%;}
-		.three-md{width:75%;}
-		.four-md{width:100%;}
-	}
-	// .one-md.no-margin{width:25%;}
-	// .two-md.no-margin{width:50%;}
-	// .three-md.no-margin{width:75%;}
-	// .four-md.no-margin{width:100%;}
+    .one-md{width:23%;}
+    .two-md{width:48%;}
+    .three-md{width:73%;}
+    .four-md{width:98%;}
+    .no-margin{
+        .one-md{width:25%;}
+        .two-md{width:50%;}
+        .three-md{width:75%;}
+        .four-md{width:100%;}
+    }
 }
-
-/* For devices under 400px */
+/* Small devices */
 @media(max-width:$grid-sm){
-  /* Don't forget the margin */
-  .one-sm{width:23%;}
-  .two-sm{width:48%;}
-  .three-sm{width:73%;}
-  .four-sm{width:98%;}
-	.no-margin{
-		.one-sm{width:25%;}
-		.two-sm{width:50%;}
-		.three-sm{width:75%;}
-		.four-sm{width:100%;}
-	}
-	// .one-sm.no-margin{width:25%;}
-	// .two-sm.no-margin{width:50%;}
-	// .three-sm.no-margin{width:75%;}
-	// .four-sm.no-margin{width:100%;}
+    /* Don't forget the margin */
+    .one-sm{width:23%;}
+    .two-sm{width:48%;}
+    .three-sm{width:73%;}
+    .four-sm{width:98%;}
+    .no-margin{
+        .one-sm{width:25%;}
+        .two-sm{width:50%;}
+        .three-sm{width:75%;}
+        .four-sm{width:100%;}
+    }
 }
 
+// Helpers
+// =======
+/* Helper to remove the left/right margins */
 .no-margin, .no-margin .col{
- 	margin-left:0;
- 	margin-right:0;
+    margin-left:0;
+    margin-right:0;
 }
