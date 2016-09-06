@@ -16,7 +16,8 @@ $competences = [
                 'stars' => 3,
                 'projects' => ['MapGen', 'TicTacToe', 'Simon', 'JSCalc', 'Autres'],
             ],
-            "Bash" => ['stars' => 3,]
+            "Bash" => ['stars' => 3,],
+            "C#/.Net" => ['stars' => 1,]
         ]
     ],
     'Frameworks' => [
@@ -26,6 +27,8 @@ $competences = [
                 'stars' => 3,
                 'projects' => ['Elabs', 'Croogo', 'SuperBake', 'Karl', 'CakePart']
             ],
+            "Symphony2" => ['stars' => 1,],
+            "Zend" => ['stars' => 1,],
             "Bootstrap" => [
                 'stars' => 4,
                 'projects' => ['Elabs', 'Karl', 'TBS']
@@ -62,7 +65,8 @@ $competences = [
             "Git" => ['stars' => 3,],
             "Vagrant" => ['stars' => 2,
                 'projects' => ['Zenias']
-            ]
+            ],
+            "UML" => ['stars' => 1,],
         ]
     ],
     'Design' => [
@@ -279,7 +283,7 @@ $this->end();
             </div>
             <div class="col one two-md four-sm col-experiences">
                 <div class="col-info">
-                    <h2>Experience professionnelle</h2>
+                    <h2>Expérience professionnelle</h2>
                     <h3>2014-2016 : <a href="http://metallerie.fr" target="_blank"><?php echo $this->Html->iconT('external-link', 'Métallerie Sarthoise') ?></a></h3>
                     <ul class="card-content-list">
                         <li>Ouvrier en métallerie/serrurerie</li>
@@ -305,6 +309,7 @@ $this->end();
                     <h2>Formation</h2>
                     <h3>2016</h3>
                     <ul class="card-content-list">
+                        <li>Formation Développer Logiciel à l'<a href="http://imie-ecole-informatique.fr" target="_blank">IMIE</a> : Diplôme BAC+2</li>
                         <li>Certification "Front End Developper" (FreeCodeCamp.com)</li>
                     </ul>
                     <h3>2011</h3>
@@ -327,7 +332,7 @@ $this->end();
 
             <div class="col one two-md four-sm col-experiences-perso">
                 <div class="col-info print-only col-perso">
-                    <h2>Experience personnelle</h2>
+                    <h2>Expérience personnelle</h2>
                     <ul class="card-content-list">
                       <?php
                       foreach ($projs as $p => $d):
