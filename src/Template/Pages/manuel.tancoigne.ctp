@@ -26,7 +26,7 @@ $competences = [
                 'stars' => 3,
                 'projects' => ['Elabs', 'Croogo', 'SuperBake', 'Karl', 'CakePart']
             ],
-            "Twitter Bootstrap" => [
+            "Bootstrap" => [
                 'stars' => 4,
                 'projects' => ['Elabs', 'Karl', 'TBS']
             ],
