@@ -2,6 +2,7 @@
 $competences = [
     "Langages de programmation" => [
         'icon' => 'code',
+        'col' => 1,
         'data' => [
             "PHP" => [
                 'stars' => 4,
@@ -22,6 +23,7 @@ $competences = [
     ],
     'Frameworks' => [
         'icon' => 'cogs',
+        'col' => 1,
         'data' => [
             "CakePHP" => [
                 'stars' => 3,
@@ -31,7 +33,7 @@ $competences = [
             "Zend" => ['stars' => 1,],
             "Bootstrap" => [
                 'stars' => 4,
-                'projects' => ['Elabs', 'Karl', 'TBS']
+                'projects' => ['Elabs', 'Karl', 'Tbs']
             ],
             "Materialize" => [
                 'stars' => 3,
@@ -45,6 +47,7 @@ $competences = [
     ],
     'Web' => [
         'icon' => 'globe',
+        'col' => 1,
         'data' => [
             "HTML5" => ['stars' => 5,],
             "CSS3" => ['stars' => 4,],
@@ -53,6 +56,7 @@ $competences = [
     ],
     'Bases de données' => [
         'icon' => 'database',
+        'col' => 1,
         'data' => [
             "MySQL" => ['stars' => 4,],
             "PostgreSQL" => ['stars' => 1,],
@@ -60,6 +64,7 @@ $competences = [
     ],
     'Outils' => [
         'icon' => 'wrench',
+        'col' => 2,
         'data' => [
             "LessCSS/SASS" => ['stars' => 4,],
             "Git" => ['stars' => 3,],
@@ -71,6 +76,7 @@ $competences = [
     ],
     'Design' => [
         'icon' => 'paint-brush',
+        'col' => 2,
         'data' => [
             "Inkscape" => ['stars' => 3,],
             "Gimp" => ['stars' => 3,],
@@ -81,14 +87,24 @@ $competences = [
     ],
     'OS' => [
         'icon' => 'desktop',
+        'col' => 2,
         'data' => [
             "Linux" => ['stars' => 4,],
             "Android" => ['stars' => 3,],
             "Windows" => ['stars' => 3,],
         ],
     ],
+    'Langues' => [
+        'icon' => 'language',
+        'col' => 2,
+        'data' => [
+            "Anglais" => ['stars' => 4,],
+            "Russe" => ['stars' => 1,],
+        ],
+    ],
     'Autres' => [
         'icon' => 'puzzle-piece',
+        'col' => 2,
         'data' => [
             'Solidworks, Draftsight, Sketchup...'
         ]
@@ -121,6 +137,9 @@ $projs = [
     'AM72' => ['title' => 'Art Métal 72', 'description' => 'Site de l\'entreprise qui m\'a formé en métallerie', 'link' => 'http://artmetal72.com', 'tech' => 'PHP, Mysql'],
     'TancEben' => ['title' => 'Tancoigne Ebeniste', 'description' => 'Site de l\'entreprise de mon père', 'link' => 'http://tancoigne-ebeniste.com', 'tech' => 'PHP, Mysql'],
 ];
+
+// This section is defined here, as used twice on the page... 
+// not a good practice but that's it.
 $this->start('divers');
 ?>
 <h2>Centres d'intérêt</h2>
@@ -144,11 +163,12 @@ $this->end();
 ?>
 
 <div id="main">
-    <!--head -->
+    <!-- Personnal introduction -->
     <div class="container">
+        <!-- Card -->
         <div id="personnal-card" class="col two two-print">
             <div id="personnal-data">
-              <?php echo $this->Html->image('Cv.photo.png', ['class' => 'avatar', 'alt' => 'photo']) ?>
+                <?php echo $this->Html->image('Cv.photo.png', ['class' => 'avatar', 'alt' => 'photo']) ?>
                 <div class="info-wrapper">
                     <div class="name-wrapper">
                         <div class="name-lines"></div>
@@ -163,16 +183,15 @@ $this->end();
                 <li><i class="fa fa-phone fa-fw"></i> <span id="tel-container"></span></li>
             </ul>
         </div>
+        <!-- /Card -->
+        
+        <!-- Links -->
         <div class="line" id="header">
             <div class="col two two two-print">
             </div>
             <div class="col two two two-print">
-                <!-- <div class="container-fluid"> -->
                 <div class="line">
                     <div class="col two">
-                        <!-- <div class="list-wrapper">
-                            <span class="list-title">Réseau</span>
-                        </div> -->
                         <ul class="list-content">
                             <li><i class="fa fa-home fa-fw"></i> <a href="http://experimentslabs.com/" target="_blank">Site web</a></li>
                             <li class="print-only"><i class="fa fa-file-text fa-fw"></i> <a href="http://experimentslabs.com/cv" target="_blank">CV en ligne</a></li>
@@ -181,9 +200,6 @@ $this->end();
                         </ul>
                     </div>
                     <div class="col two">
-                        <!-- <div class="list-wrapper">
-                            <span class="list-title">Achèvements</span>
-                        </div> -->
                         <ul class="list-content">
                             <li><i class="fa fa-github fa-fw"></i> <a href="https//github.com/mtancoigne" target="_blank">Github</a></li>
                             <li><i class="fa fa-codepen fa-fw"></i> <a href="https://codepen.io/mtancoigne" target="_blank">Codepen.io</a></li>
@@ -192,12 +208,12 @@ $this->end();
                         </ul>
                     </div>
                 </div>
-                <!-- </div> -->
             </div>
             <div class="clearfix"></div>
         </div>
+        <!-- /Links -->
     </div>
-    <!-- /head -->
+    <!-- /Personnal introduction -->
 
     <!-- Content -->
     <div class="container-fluid main-content">
@@ -206,78 +222,75 @@ $this->end();
                 <div class="line col-info no-margin">
                     <h2>Compétences</h2>
                     <?php
-                    $nbPerCol = (int) (count($competences) / 2);
-                    $nbInCol = 0;
-                    $nbTotal = 0;
-                    $closeCol = false;
                     foreach ($competences as $competence => $data):
-                        if ($nbInCol === $nbPerCol - 1):
-                            $closeCol = true;
-                        elseif ($nbInCol === 0):
-                            ?><div class="col two two-md four-sm"><?php
-                        endif;
+                        /* Creating competences in a module, to dispatch them later in the good column */
+                        $this->start('aCompetence');
                         ?>
-                            <!-- Compétence -->
-                            <h3><?php echo $this->Html->iconT($data['icon'], $competence) ?></h3>
-                            <ul class="card-content-list starlist">
-                              <?php foreach ($data['data'] as $comName => $comData): ?>
-                                  <?php if (!is_array($comData)): ?>
-                                        <li><?php echo $comData ?></li>
-                                    <?php else: ?>
-                                        <li>
-                                            <span class="content">
-                                              <?php echo $comName ?>
-                                                <span class="stars">
-                                                  <?php
-                                                  for ($i = 0; $i < 5; $i++):
-                                                      ?>
-                                                        <i class="fa fa-fw fa-star<?php echo ($i < $comData['stars']) ? '' : '-o' ?>"></i>
-                                                    <?php endfor; ?>
-                                                    <span class="btn-samples<?php echo (isset($comData['projects'])) ? ' enabled' : '' ?>">Projets...</span>
-                                                </span>
-                                            </span>
-                                            <!-- Projets -->
-                                            <?php if (isset($comData['projects'])) : ?>
-                                                <div class="list-project">
-                                                    <ul>
-                                                      <?php
-                                                      foreach ($comData['projects'] as $proj):
-                                                          $project = $projs[$proj];
-                                                          ?>
-                                                            <li>
-                                                              <?php if (isset($project['title'])): ?>
-                                                                    - <strong>
-                                                                      <?php if (isset($project['link'])): ?>
-                                                                            <a href="<?php echo $project['link'] ?>" target="_blank"><i class="fa fa-external-link fa-fw"></i> <?php echo $project['title'] ?></a>
-                                                                        <?php else: ?>
-                                                                            <?php echo $project['title']; ?>
-                                                                        <?php endif; ?> :
-                                                                    </strong>
-                                                                <?php endif; ?>
-                                                                <?php echo $project['description'] ?>
-                                                            </li>
-                                                        <?php endforeach; ?>
-                                                    </ul>
-                                                </div>
-                                            <?php endif; ?>
-                                        </li>
+                        <h3><?php echo $this->Html->iconT($data['icon'], $competence) ?></h3>
+                        <ul class="card-content-list starlist">
+                            <?php foreach ($data['data'] as $comName => $comData): ?>
+                                <?php
+                                // Case where there is no special data for the competence
+                                if (!is_array($comData)):
+                                    ?>
+                                    <li><?php echo $comData ?></li>
                                     <?php
-                                    endif;
-                                endforeach;
-                                ?>
-                            </ul>
-                            <?php
-                            $nbInCol ++;
-                            $nbTotal ++;
-                            if ($closeCol || $nbTotal == count($competences)):
-                                $nbInCol = 0;
-                                $closeCol = false;
-                                ?>
-                            </div>
-                            <?php
-                        endif;
+                                // Case where there is data
+                                else:
+                                    ?>
+                                    <li class="no-style">
+                                        <span class="content">
+                                            <?php echo $comName ?>
+                                            <span class="stars">
+                                                <?php
+                                                for ($i = 0; $i < 5; $i++):
+                                                    ?>
+                                                    <i class="fa fa-fw fa-star<?php echo ($i < $comData['stars']) ? '' : '-o' ?>"></i>
+                                                <?php endfor; ?>
+                                                <span class="btn-samples<?php echo (isset($comData['projects'])) ? ' enabled' : '' ?>">Projets...</span>
+                                            </span>
+                                        </span>
+                                        <!-- Projets -->
+                                        <?php if (isset($comData['projects'])) : ?>
+                                            <div class="list-project">
+                                                <ul>
+                                                    <?php
+                                                    foreach ($comData['projects'] as $proj):
+                                                        $project = $projs[$proj];
+                                                        ?>
+                                                        <li>
+                                                            <?php if (isset($project['title'])): ?>
+                                                                <strong>
+                                                                    <?php if (isset($project['link'])): ?>
+                                                                        <a href="<?php echo $project['link'] ?>" target="_blank"><i class="fa fa-external-link fa-fw"></i> <?php echo $project['title'] ?></a>
+                                                                    <?php else: ?>
+                                                                        <?php echo $project['title']; ?>
+                                                                    <?php endif; ?> :
+                                                                </strong>
+                                                            <?php endif; ?>
+                                                            <?php echo $project['description'] ?>
+                                                        </li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            </div>
+                                        <?php endif; ?>
+                                    </li>
+                                <?php
+                                endif;
+                            endforeach;
+                            ?>
+                        </ul>
+                        <?php
+                        $this->end();
+                        $this->append('col' . $data['col'], $this->fetch('aCompetence'));
                     endforeach;
                     ?>
+                    <div class="col two two-md four-sm">
+                        <?php echo $this->fetch('col1'); ?>
+                    </div>
+                    <div class="col two two-md four-sm">
+                        <?php echo $this->fetch('col2'); ?>
+                    </div>
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -326,7 +339,7 @@ $this->end();
                     </ul>
                 </div>
                 <div class="col-info print-only">
-                  <?php echo $this->fetch('divers') ?>
+                    <?php echo $this->fetch('divers') ?>
                 </div>
             </div>
 
@@ -334,12 +347,12 @@ $this->end();
                 <div class="col-info print-only col-perso">
                     <h2>Expérience personnelle</h2>
                     <ul class="card-content-list">
-                      <?php
-                      foreach ($projs as $p => $d):
-                          if (isset($d['tech']) && !empty($d['tech'])):
-                              ?>
+                        <?php
+                        foreach ($projs as $p => $d):
+                            if (isset($d['tech']) && !empty($d['tech'])):
+                                ?>
                                 <li>
-                                    - <strong><?php echo $this->Html->link($d['title'], $d['link'], ['target' => '_blank']) ?></strong><br>
+                                    <strong><?php echo $this->Html->link($d['title'], $d['link'], ['target' => '_blank']) ?></strong><br>
                                     <?php echo $d['description'] ?> (<em><?php echo $d['tech'] ?></em>)
                                 </li>
                                 <?php
@@ -349,28 +362,30 @@ $this->end();
                     </ul>
                 </div>
                 <div class="col-info no-print">
-                  <?php echo $this->fetch('divers') ?>
+                    <?php echo $this->fetch('divers') ?>
                 </div>
             </div>
         </div>
     </div>
     <!-- /Content -->
 </div>
+<!-- Cleaning up -->
 <div class="clearfix"></div>
+
 <!-- Additionnal scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" ></script>
 <script language="javascript">
-        var ml = 'bS50YW5jb2lnbmVAZ21haWwuY29t'; //mail
-        var tlc = 'KzMzNjExMDExMTY4'; //tel. complete
-        var tls = 'MDYgMTEwIDExMSA2OA=='; // tel. short
-        $('#email-container').html('<a href="mailto:' + atob(ml) + '" class="no-print">' + atob(ml) + '</a><span class="print-only">' + atob(ml) + '</span>');
-        $('#tel-container').html('<a href="tel:' + atob(tlc) + '" class="no-print">' + atob(tls) + '</a><span class="print-only">' + atob(tls) + '</span>');
-        //Projects display:
-        $('.btn-samples').click(function () {
-            var parents = $(this).parents();
-            var list = $(parents[2]).children();
-            $(list[1]).toggle('fast');
-        });
+    var ml = 'bS50YW5jb2lnbmVAZ21haWwuY29t'; //mail
+    var tlc = 'KzMzNjExMDExMTY4'; //tel. complete
+    var tls = 'MDYgMTEwIDExMSA2OA=='; // tel. short
+    $('#email-container').html('<a href="mailto:' + atob(ml) + '" class="no-print">' + atob(ml) + '</a><span class="print-only">' + atob(ml) + '</span>');
+    $('#tel-container').html('<a href="tel:' + atob(tlc) + '" class="no-print">' + atob(tls) + '</a><span class="print-only">' + atob(tls) + '</span>');
+    //Projects display:
+    $('.btn-samples').click(function () {
+        var parents = $(this).parents();
+        var list = $(parents[2]).children();
+        $(list[1]).toggle('fast');
+    });
 </script>
 
 <?php
