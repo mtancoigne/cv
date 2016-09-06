@@ -1,11 +1,5 @@
 # Cv plugin for CakePHP
 
-## Installation
+Originally made for CVs on ExperimentsLabs.com.
 
-You can install this plugin into your CakePHP application using [composer](http://getcomposer.org).
-
-The recommended way to install composer packages is:
-
-```
-composer require mtancoigne/Cv
-```
+This plugin is nothing but the PageController from Cake.
