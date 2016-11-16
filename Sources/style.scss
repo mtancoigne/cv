@@ -8,13 +8,11 @@
 
 // Margins/padding
 body{
-		margin: 50px 0;
+    margin: 50px 0;
     background-color: $body-bg;
     color:$text-color;
     background-image: $page-bg-top, $bg-big, $page-bg-bottom;
-		background-repeat: repeat-x, repeat, repeat-x;
-		background-position: top, center, bottom;
-		background-attachment: fixed
-		/*background-position: top, center, bottom;*/
-    // background-repeat: repeat-x;
+    background-repeat: repeat-x, repeat, repeat-x;
+    background-position: top, center, bottom;
+    background-attachment: fixed
 }

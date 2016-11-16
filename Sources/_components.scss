@@ -109,10 +109,31 @@ ul.starlist {
     padding-top:0px;
     li{
         margin-bottom:3px;
-        &:before{
-            content: ' - ';
-        }
+        /*        &:before{
+                    content: ' - ';
+                }*/
     }
+}
+
+.col-experiences-perso, {
+    p{
+        padding-left: 1.4em;
+    }
+}
+
+.col-do-print div{
+    margin:2em auto;
+    text-align:center;
+    .btn{
+        padding:0.2em 0.5em;
+        font-size:1.2em;
+    }
+
+}
+
+.col-experiences li:before,
+.col-interets li:before{
+    content: ' - ';
 }
 
 li.no-style:before{
@@ -123,32 +144,53 @@ li.no-style:before{
 li .stars {
     float: right;
     font-size: 0.8em;
-    /* "Projects..." button */
-    .btn-samples {
-        border-image: $btn-border-img 3 repeat repeat;
-        border-style:solid;
-        border-width: 3px;
-        padding: 0px 3px;
-        background-image:$bg-filler-img;
-        opacity:0.2;
-        cursor: not-allowed;
-        &:hover{
-            border-image: $btn-border-img-hover 3 repeat repeat;
-            background-image:$bg-filler-img-hover;
-        }
-    }
     /* Enabled buttons */
-    .enabled{
-        opacity:1;
-        cursor: context-menu;
-    }
-
 }
+
+/* "Projects..." button */
+.btn{
+    border-image: $btn-border-img 3 repeat repeat;
+    border-style:solid;
+    border-width: 3px;
+    padding: 0px 3px;
+    background-image:$bg-filler-img;
+    cursor:pointer;
+    &:hover{
+        border-image: $btn-border-img-hover 3 repeat repeat;
+        background-image:$bg-filler-img-hover;
+    }
+}
+
+.btn-samples{
+    opacity:0.2;
+    cursor: not-allowed;
+}
+
+.btn-samples.enabled{
+    opacity:1;
+    cursor: context-menu;
+}
+
 /* Projects list in competences blocks */
+$list_project_b_color:mix($border-color, $body-bg, 80%);
 .list-project{
     display:none;
     font-size:0.9em;
     margin-left:5px;
+    background: $bg-small repeat-x;
+    border-left: 1px dashed $list_project_b_color;
+    border-right: 1px dashed $list_project_b_color;
+    border-bottom: 3px solid $list_project_b_color;
+    padding:5px 3px 5px 3px;
+    margin:5px -3px 15px -3px;
+    ul{
+        li{
+            p{padding-left: 1.4em;}
+            &:nth-child(even){
+                background-color:lighten($body-bg, 15%);
+            }
+        }
+    }
 }
 
 /* Card with info in it */
@@ -157,6 +199,21 @@ li .stars {
     margin-bottom:15px;
     background-color: saturate($body-bg, 10%);
     border:1px solid $border-color;
+    .col{
+        margin-top:0;
+    }
+}
+
+.col-notes{
+    li{
+        line-height: 1em;
+        margin-top:1em;
+        margin:0;
+        border-bottom: 1px solid $border-color;
+        &:last-child{
+            border-bottom:0;
+        }
+    }
 }
 
 // Helpers
@@ -165,6 +222,8 @@ li .stars {
 .print-only{
     display: none;
 }
+
+.small{font-size:0.8em;}
 
 // Media queries
 // =============
@@ -183,8 +242,8 @@ li .stars {
     // Scaffolding
     // ===========
     body{
-        margin:0px !important; 
-        padding:0; 
+        margin:0px !important;
+        padding:0;
         font-size:9pt;
     }
 
@@ -197,8 +256,8 @@ li .stars {
 
     h3{ font-size:1em;}
 
-    a, a:visited{color:$text-color}
-    a:after{
+    a, a:visited{color:mix(#0000FF, $text-color, 30%);}
+    .contact-list a:after{
         content:" (" attr(href) ") ";
         font-size:0.9em;
         font-weight:normal;
@@ -226,7 +285,7 @@ li .stars {
 
 
     // Classes
-    // =======    
+    // =======
     .btn-samples{
         display: none;
     }
@@ -245,13 +304,16 @@ li .stars {
             margin:0;
         }
     }
-    
+
     .col-experiences, .col-experiences-perso{
         width: 35.5%
     }
-    
-    .list-projects{
-        display:none;
+    .col-perso ul{
+        margin-top:5px;
+    }
+
+    .list-project{
+        display:none !important;
     }
 
     // Print-specific classes
